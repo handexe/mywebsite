@@ -14,11 +14,16 @@ function Login({ setIsAuth }) {
     <div className="loginPage">
       <Container id="login-container">
         <Container id="login-card">
-          <Row>
+          <Row style={{marginLeft:"0.5rem"}}>
             <p>Lütfen Google İle Giriş Yapın.</p>
           </Row>
           <Row>
             <Button
+            style={{ 
+            width:"80%",
+            marginLeft:"1.5rem",
+            
+            }}
               className="login-with-google-btn"
               onClick={signInWithGoogle}>
               Google İle Giriş Yap

@@ -35,7 +35,7 @@ const ThirdCard = () => {
       <Row>
         {posts.length === 0 ? (
           <Row>
-            <p>Henüz yazı yok.</p>
+            <p as="h5">Henüz yazı yok.</p>
           </Row>
         ) : (
           posts.map((post) => (

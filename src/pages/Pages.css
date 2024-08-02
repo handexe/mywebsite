@@ -1,8 +1,14 @@
+:root{
+  --bgColor: #e5e5e5;
+}
+
+
+
 #about {
   max-width: 75%;
   margin-top: 10%;
   padding: 2rem;
-  background-color: #e5e5e5;
+  background-color: var(--bgColor);
   border-radius: 1rem;
 }
 #addpost-card {
@@ -17,7 +23,7 @@
   max-width: 75%;
 }
 #posts-blog {
-  background-color: #e5e5e5;
+  background-color: var(--bgColor);
   border-radius: 1rem;
   max-height: fit-content;
   min-height: 10rem;
@@ -26,20 +32,28 @@
 #contact-container {
   max-width: 75%;
   margin-top: 10%;
-  background-color: #e5e5e5;
+  background-color: var(--bgColor);
   border-radius: 1rem;
 }
 #login-container {
-  max-width: 20%;
-  height: 15rem;
+  max-width: 25%;
+  height: 20rem;
   margin-top: 10%;
-  background-color: #e5e5e5;
+  background-color: var(--bgColor);
   border-radius: 1rem;
-  padding: 3rem;
+  padding: 1rem;
+  padding-top: 2rem;
   }
   #login-card {
-    max-width: 80%;
-    background-color: antiquewhite;
+    max-width: 90%;
+    height: 15rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2rem;
+    background-color: rgb(252, 246, 255);
+    
     
   }
 #post {
@@ -47,11 +61,18 @@
   margin-top: 15%;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: #e5e5e5;
+  background-color: var(--bgColor);
   border-radius: 1rem;
 }
 #post-con {
   margin-left: 2rem;
   margin-right: 0px;
   justify-content: center;
+}
+#deletepost-container{
+  max-width: 75%;
+  margin-top: 10%;
+  background-color: var(--bgColor);
+  border-radius: 2rem;
+  padding: 3rem;
 }

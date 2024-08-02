@@ -10,7 +10,7 @@ function SecondCard() {
         <Card.Text>
           Bir Bilgisayar Programcısı olarak yaptığım tüm projelerime buradan ulaşabilirsiniz. 
         </Card.Text>
-        <Button variant="secondary">Git Hub</Button>
+        <Button variant="secondary" >Git Hub</Button>
       </Card.Body>
     </Card>
   )
