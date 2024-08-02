@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/ProtecedRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+import './App.css';
 
 function App() {
   const [isAuth, setIsAuth] = useState(

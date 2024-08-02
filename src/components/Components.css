@@ -18,49 +18,9 @@
   background-color: #e5e5e5;
   border-radius: 1rem;
 }
-#about{
-  max-width: 75%;
-  margin-top: 10%;
-  padding: 2rem;
-  background-color: #e5e5e5;
-  border-radius: 1rem;
-}
-#addpost-card{
-  max-width: 75%;
-  margin-top: 10%;
-  background-color: #e5e5e5;
-  border-radius: 1rem;
-}
-#contact-container{
-  max-width: 75%;
-  margin-top: 10%;
-  background-color: #e5e5e5;
-  border-radius: 1rem;
-}
-#blog-posts-container {
-  margin-top: 10%;
-  max-width: 75%;
-}
-#posts-blog{
-  background-color: #e5e5e5;
-  border-radius: 1rem;
-  max-height: fit-content ;
-  min-height: 10rem;
-  margin-bottom: 3rem
-}
-#post{
-  max-width: 50rem;
-  margin-top: 15%;
-  margin-left: 0px;
-  margin-right: 0px;
-  background-color: #e5e5e5;
-  border-radius: 1rem;
-}
-#post-con{
-  margin-left: 2rem;
-  margin-right: 0px;
-  justify-content: center;
-}
+
+
+
 #code-blog{
   margin-top: 10%;
 }

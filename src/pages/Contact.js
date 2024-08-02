@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { Container, Row, Form, Button } from "react-bootstrap";
-import "../components.css";
+import { Container, Form, Button } from "react-bootstrap";
+import "./Pages.css";
 function Contact({ userEmail }) {
   const [state, handleSubmit] = useForm("mvgpawqo");
   if (state.succeeded) {

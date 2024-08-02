@@ -14,7 +14,7 @@ import { db, storage } from "../firebase";
 
 import { v4 as uuidv4 } from "uuid";
 
-import "../components.css";
+import "./Pages.css";
 
 function AddPost() {
   const [txt, setTxt] = useState("");

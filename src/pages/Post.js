@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
-import "../components.css";
+import "./Pages.css";
 import MonacoEditorComponent from "../components/MonacoEditor/MonacaEditor";
 import CommentForm from "../components/Comment/CommentForm";
 import CommentList from "../components/Comment/CommentList";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../components.css";
+import "./Components.css";
 import iciyorum from "../assets/iciyorum.gif";
 import { Container, Row, Col } from "react-bootstrap";
 

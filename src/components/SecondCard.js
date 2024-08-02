@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap';
-import '../components.css';
+import './Components.css';
 
 function SecondCard() {
   return (

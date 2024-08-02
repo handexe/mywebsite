@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection , query ,orderBy } from "firebase/firestore";
 import { db } from "../firebase";
-import "../components.css";
+import "./Pages.css";
 import { Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 function Blog({ isAuth }) {
@@ -29,7 +29,7 @@ function Blog({ isAuth }) {
               <Card.Title as="h5">{post.titleVal}</Card.Title>
               <Card.Text>{post.TxtVal}</Card.Text>
               <Link to={`/blog/${post.id}`} >
-                Card Link
+                Posta git
               </Link>
             </Card.Body>
           </Card>
