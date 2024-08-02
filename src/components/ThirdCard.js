@@ -55,7 +55,7 @@ const ThirdCard = () => {
                     ? post.TxtVal
                     : post.TxtVal.substring(0, 100) + "..."} {" "}
                   <Link
-                    to={`/post/${posts.id}`}
+                    to={`/post/${post.id}`}
                     className="link-body-emphasis link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
                     Devamını Oku
                   </Link>

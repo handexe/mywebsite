@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Button, Form } from "react-bootstrap";
 import { db, auth } from "../../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 function CommentForm({ postId }) {
   const user = auth.currentUser;
   const [comment, setComment] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    // Kullanıcı durumu değişikliklerini dinle
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // Kullanıcı giriş yaptıysa
+        const displayName = user.displayName || "Kullanıcı Adı Yok";
+        setUserName(displayName);
+      } else {
+        // Kullanıcı çıkış yaptıysa
+        setUserName("");
+      }
+    });
 
+    // Temizlik işlevi: Dinleyiciyi kaldır
+    return () => unsubscribe();
+  }, []);
   const handlerSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
@@ -39,7 +56,7 @@ function CommentForm({ postId }) {
     <Form onSubmit={handlerSubmit}>
       <Form.Group controlId="formName" className="m-2">
         <Form.Label>Adınız</Form.Label>
-        <Form.Control type="text" value={user.displayName} readOnly />
+        <Form.Control type="text" value={userName} readOnly />
       </Form.Group>
       <Form.Group controlId="formComment" className="m-2">
         <Form.Label>Yorum Yapınız</Form.Label>
