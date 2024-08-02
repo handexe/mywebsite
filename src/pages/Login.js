@@ -14,7 +14,7 @@ function Login({ setIsAuth }) {
     <div className="loginPage">
       <Container id="login-container">
         <Container id="login-card">
-          <Row style={{marginLeft:"0.5rem"}}>
+          <Row style={{marginLeft:"0.5rem" }}>
             <p>Lütfen Google İle Giriş Yapın.</p>
           </Row>
           <Row>
