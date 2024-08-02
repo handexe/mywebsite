@@ -1,0 +1,95 @@
+#first-card {
+  max-width: 75%;
+  margin-top: 10%;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#second-card {
+  max-width: 75%;
+  margin: auto;
+  margin-top: 5%;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#third-card {
+  max-width: 75%;
+  margin: auto;
+  margin-top: 5%;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#about{
+  max-width: 75%;
+  margin-top: 10%;
+  padding: 2rem;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#addpost-card{
+  max-width: 75%;
+  margin-top: 10%;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#contact-container{
+  max-width: 75%;
+  margin-top: 10%;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#blog-posts-container {
+  margin-top: 10%;
+  max-width: 75%;
+}
+#posts-blog{
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+  max-height: fit-content ;
+  min-height: 10rem;
+  margin-bottom: 3rem
+}
+#post{
+  max-width: 50rem;
+  margin-top: 15%;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+#post-con{
+  margin-left: 2rem;
+  margin-right: 0px;
+  justify-content: center;
+}
+#code-blog{
+  margin-top: 10%;
+}
+#comments-blok{
+  max-width: 50rem;
+  margin-top: 5%;
+  background-color: #e5e5e5;
+  border-radius: 1rem;
+}
+/* components.css veya uygun bir CSS dosyasına ekleyin */
+.custom-quill-container {
+  height: 250px;
+  margin-bottom: 50px;
+  overflow-y: auto; /* Dikey kaydırma çubuğunu etkinleştirir */
+}
+
+.custom-quill-container::-webkit-scrollbar {
+  width: 8px; /* Scroll bar genişliği */
+}
+
+.custom-quill-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Scroll bar izi rengi */
+}
+
+.custom-quill-container::-webkit-scrollbar-thumb {
+  background: #888; /* Scroll bar rengi */
+  border-radius: 4px; /* Scroll bar köşe yuvarlama */
+}
+
+.custom-quill-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Scroll bar hover rengi */
+}
