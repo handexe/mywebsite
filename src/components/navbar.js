@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 
 MyNavbar.propTypes = {
   signUserOut: PropTypes.string.isRequired,
-  isAuth: ProbTypes.string.isRequired,
-  userEmail: ProbTypes.string.isRequired, // veya uygun tip
+  isAuth: PropTypes.string.isRequired,
+  userEmail: PropTypes.string.isRequired, // veya uygun tip
 };
 function MyNavbar({ signUserOut, isAuth, userEmail }) {
   return (

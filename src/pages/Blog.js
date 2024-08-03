@@ -24,7 +24,7 @@ function Blog() {
     <div>
       <Container id="blog-posts-container">
         {data.map((post) => (
-          <Card id="posts-blog">
+          <Card id="posts-blog" key={post.id}>
             <Card.Body>
               <Card.Title as="h5">{post.titleVal}</Card.Title>
               <Card.Text>{post.TxtVal}</Card.Text>

@@ -14,7 +14,7 @@ function About() {
             <Card.Title>Ben Kimim?</Card.Title>
             <Card.Text>
               Ben {age} yaşında bir Bilgisayar Programcısıyım. Tekirdağ Namık
-              Kemal Üniversitesi'nden mezun oldum. Ayrıca, lisans eğitimi için
+              Kemal Üniversitesi&apos;nden mezun oldum. Ayrıca, lisans eğitimi için
               hazırlık yapıyorum ve Yönetim Bilişim Sistemleri bölümünde öğrenim
               görmeyi hedefliyorum. Bu bölümde başarılı olacağıma inanıyorum.
               <br/>
