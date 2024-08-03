@@ -1,6 +1,7 @@
 @media (max-width: 524px) {
   #app-navbar {
     margin-bottom: 30%;
+    padding:0;
   }
 }
 #first-card {
