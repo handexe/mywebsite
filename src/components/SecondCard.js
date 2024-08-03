@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import './Components.css';
 
 function SecondCard() {
@@ -10,7 +11,10 @@ function SecondCard() {
         <Card.Text>
           Bir Bilgisayar Programcısı olarak yaptığım tüm projelerime buradan ulaşabilirsiniz. 
         </Card.Text>
-        <Button variant="secondary">Git Hub</Button>
+        <Link to="https://github.com/handexg">
+          <Button variant="secondary">Git Hub</Button>
+        </Link>
+        
       </Card.Body>
     </Card>
   )
