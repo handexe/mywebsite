@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
-
-
+import PropTypes from 'prop-types';
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+  userEmail: PropTypes.string.isRequired,
+  allowedEmail: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 function ExampleBlogTextCard({ id, title, description }) {
     // const truncateText = (text, limit) => {
     //     if (text.length <= limit) return text;

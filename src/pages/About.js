@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Card, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Pages.css";
-function About({ isAuth }) {
+function About() {
   const birthYear = 2003;
   const currentYear = new Date().getFullYear(); // Güncel yılı alın
   const age = currentYear - birthYear;

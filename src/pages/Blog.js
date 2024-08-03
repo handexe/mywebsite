@@ -4,7 +4,7 @@ import { db } from "../firebase";
 import "./Pages.css";
 import { Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-function Blog({ isAuth }) {
+function Blog() {
   const [data, setData] = useState([]);
 
   const getData = async () => {

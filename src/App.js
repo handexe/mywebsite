@@ -62,11 +62,11 @@ function App() {
           userEmail={userEmail}
         />
         <Routes>
-          <Route path="/" element={<Home isAuth={isAuth} />} />
-          <Route path="/blog" element={<Blog isAuth={isAuth} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postId" element={<Post/>} />
 
-          <Route path="/about" element={<About isAuth={isAuth} />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact userEmail={userEmail} isAuth={isAuth} />} />
           <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
           <Route

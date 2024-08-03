@@ -3,13 +3,19 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Components.css";
+import PropTypes from 'prop-types';
 
+MyNavbar.propTypes = {
+  signUserOut: PropTypes.string.isRequired,
+  isAuth: ProbTypes.string.isRequired,
+  userEmail: ProbTypes.string.isRequired, // veya uygun tip
+};
 function MyNavbar({ signUserOut, isAuth, userEmail }) {
   return (
     <Navbar
       
       expand="lg"
-      className="shadow-sm " 
+      className="shadow-sm" 
       id="navbar-custom"// CSS sınıfını ekleyin
     >
       <Container>

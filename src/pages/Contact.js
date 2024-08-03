@@ -4,7 +4,12 @@ import { Container, Form, Button } from "react-bootstrap";
 import "./Pages.css";
 import ContactModal from "./ContactModal";
 import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
+Contact.propTypes = {
+  userEmail: PropTypes.string.isRequired,
+  isAuth: PropTypes.string.isRequired, // veya uygun tip
+};
 function Contact({ userEmail, isAuth }) {
   const [state, handleSubmit] = useForm(process.env.REACT_APP_CONTACT);
   const [showModal, setShowModal] = useState(false);

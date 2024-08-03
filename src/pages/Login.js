@@ -3,6 +3,8 @@ import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { Button, Container, Row } from "react-bootstrap";
 import "./Pages.css";
+import PropTypes from 'prop-types';
+
 function Login({ setIsAuth }) {
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then(() => {
@@ -35,4 +37,7 @@ function Login({ setIsAuth }) {
   );
 }
 
+Login.propTypes = {
+  setIsAuth: PropTypes.string.isRequired, // veya uygun tip
+};
 export default Login;

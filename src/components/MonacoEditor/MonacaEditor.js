@@ -3,7 +3,10 @@ import MonacoEditor from "@monaco-editor/react";
 import { Button, Modal } from "react-bootstrap";
 import { FaCopy } from "react-icons/fa";
 import "./Modal.css"; // Ensure your CSS is correct for additional styling
-
+import PropTypes from 'prop-types';
+MonacoEditorComponent.propTypes = {
+  data: PropTypes.string.isRequired, // veya uygun tip
+};
 function MonacoEditorComponent({ data }) {
   const [isOpen, setIsOpen] = useState(false);
   const [editorValue, setEditorValue] = useState(data);
