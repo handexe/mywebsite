@@ -11,7 +11,7 @@ Contact.propTypes = {
   isAuth: PropTypes.string.isRequired, // veya uygun tip
 };
 function Contact({ userEmail, isAuth }) {
-  const [state, handleSubmit] = useForm(process.env.REACT_APP_CONTACT);
+  const [state, handleSubmit] = useForm("mvgpawqo");
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
