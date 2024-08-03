@@ -9,12 +9,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav , Container } from "react-bootstrap";
-
+import "./Components.css"
 
 function MyNavbar({signUserOut, isAuth, userEmail}) {
 
   return (
-    <div className="App">
+    <div id="app-navbar">
       
         <Navbar
         expand="lg"

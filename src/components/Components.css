@@ -1,3 +1,8 @@
+@media (max-width: 524px) {
+  #app-navbar {
+    margin-bottom: 30%;
+  }
+}
 #first-card {
   max-width: 75%;
   margin-top: 10%;
