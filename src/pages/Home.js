@@ -3,7 +3,7 @@ import FirstCard from '../components/FirstCard';
 import SecondCard from '../components/SecondCard';
 import ThirdCard from '../components/ThirdCard';
 
-function Home() {
+function Home({isAuth}) {
   return (
     <div>
       <FirstCard />

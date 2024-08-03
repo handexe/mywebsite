@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Card, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Pages.css";
-function About() {
+function About({ isAuth }) {
   const birthYear = 2003;
   const currentYear = new Date().getFullYear(); // Güncel yılı alın
   const age = currentYear - birthYear;
@@ -14,7 +14,7 @@ function About() {
             <Card.Title>Ben Kimim?</Card.Title>
             <Card.Text>
               Ben {age} yaşında bir Bilgisayar Programcısıyım. Tekirdağ Namık
-              Kemal Üniversitesi&apos;nden mezun oldum. Ayrıca, lisans eğitimi için
+              Kemal Üniversitesi'nden mezun oldum. Ayrıca, lisans eğitimi için
               hazırlık yapıyorum ve Yönetim Bilişim Sistemleri bölümünde öğrenim
               görmeyi hedefliyorum. Bu bölümde başarılı olacağıma inanıyorum.
               <br/>

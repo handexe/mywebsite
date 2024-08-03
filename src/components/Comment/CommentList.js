@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Container, Row } from "react-bootstrap";
 import { db } from "../../firebase";
 import { collection, query, where, orderBy, getDocs } from "firebase/firestore";
-import PropTypes from 'prop-types';
-CommentList.propTypes = {
-  postId: PropTypes.string.isRequired, // veya uygun tip
-};
+
 function CommentList({ postId }) {
   const [comment, setComment] = useState([]);
 

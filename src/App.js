@@ -7,13 +7,11 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
-import DeletePost from "./pages/DeletePost";
 import ProtectedRoute from "./components/ProtecedRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import './App.css';
-
 
 function App() {
   const [isAuth, setIsAuth] = useState(
@@ -62,32 +60,21 @@ function App() {
           userEmail={userEmail}
         />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/" element={<Home isAuth={isAuth} />} />
+          <Route path="/blog" element={<Blog isAuth={isAuth} />} />
           <Route path="/blog/:postId" element={<Post/>} />
 
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact userEmail={userEmail} isAuth={isAuth} />} />
+          <Route path="/about" element={<About isAuth={isAuth} />} />
+          <Route path="/contact" element={<Contact userEmail={userEmail} />} />
           <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
           <Route
             path="/add-post"
             element={
               <ProtectedRoute
                 userEmail={userEmail}
-                allowedEmail= {process.env.REACT_APP_ADMIN_MAIL} >
+                allowedEmail="hndegmb@gmail.com">
                 {" "}
                 <AddPost />{" "}
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/delete-post"
-            element={
-              <ProtectedRoute
-                userEmail={userEmail}
-                allowedEmail= {process.env.REACT_APP_ADMIN_MAIL}
-              >
-                <DeletePost />
               </ProtectedRoute>
             }
           />

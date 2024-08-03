@@ -1,30 +1,39 @@
+// import Home from "../pages/Home";
+// import About from "../pages/About";
+// import Blog from "../pages/Blog.js";
+// import Contact from "../pages/Contact.js";
+// import Login from "../pages/Login.js";
+// import AddPost from "../pages/AddPost.js";
+// import ProtectedRoute from "./ProtecedRoute";
+
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Components.css";
-import PropTypes from 'prop-types';
+import { Navbar, Nav } from "react-bootstrap";
 
-MyNavbar.propTypes = {
-  signUserOut: PropTypes.string.isRequired,
-  isAuth: PropTypes.string.isRequired,
-  userEmail: PropTypes.string.isRequired, // veya uygun tip
-};
-function MyNavbar({ signUserOut, isAuth, userEmail }) {
+
+function MyNavbar({signUserOut, isAuth, userEmail}) {
+
   return (
-    <Navbar
+    <div className="App">
       
-      expand="lg"
-      className="shadow-sm" 
-      id="navbar-custom"// CSS sınıfını ekleyin
-    >
-      <Container>
-        <Navbar.Brand as={Link} to="/" id="navbar-brand">
-          Hande G
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto" id="nav-link">
+        <Navbar
+          variant="light"
+          className="justify-content-center shadow-sm"
+          style={{
+            position: "fixed",
+            top: "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            minWidth: "50%",
+            borderRadius: "15px",
+            backgroundColor: "#e5e5e5", // Açık kahverengi
+            zIndex: 1000,
+            boxShadow: "0 4px 10px rgba(0, 0, 0)",
+          }}>
+          <Navbar.Brand to="/" className="mx-auto">
+            Hande G
+          </Navbar.Brand>
+          <Nav className="mx-auto">
             <Nav.Link as={Link} to="/">
               Anasayfa
             </Nav.Link>
@@ -39,15 +48,10 @@ function MyNavbar({ signUserOut, isAuth, userEmail }) {
             </Nav.Link>
             {isAuth ? (
               <>
-                {userEmail === "hndegmb@gmail.com" && (
-                  <>
-                    <Nav.Link as={Link} to="/add-post">
-                      Blog Ekle
-                    </Nav.Link>
-                    <Nav.Link as={Link} to="/delete-post">
-                      Blog Sil
-                    </Nav.Link>
-                  </>
+                {userEmail === "hndegmb@gmail.com" && ( // Özel sekme yalnızca belirli kullanıcı için
+                  <Nav.Link as={Link} to="/add-post">
+                    Blog Ekle
+                  </Nav.Link>
                 )}
                 <Nav.Link onClick={signUserOut}>Log Out</Nav.Link>
               </>
@@ -57,9 +61,10 @@ function MyNavbar({ signUserOut, isAuth, userEmail }) {
               </Nav.Link>
             )}
           </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        </Navbar>
+        
+      
+    </div>
   );
 }
 

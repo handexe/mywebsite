@@ -3,10 +3,6 @@ import { Button, Form } from "react-bootstrap";
 import { db, auth } from "../../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
-import PropTypes from 'prop-types';
-CommentForm.propTypes = {
-  postId: PropTypes.string.isRequired, // veya uygun tip
-};
 function CommentForm({ postId }) {
   const user = auth.currentUser;
   const [comment, setComment] = useState("");
