@@ -6,7 +6,7 @@ import ContactModal from "./ContactModal";
 import { useNavigate } from "react-router-dom";
 
 function Contact({ userEmail, isAuth }) {
-  const [state, handleSubmit] = useForm(REACT_APP_CONTACT);
+  const [state, handleSubmit] = useForm(process.env.REACT_APP_CONTACT);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
