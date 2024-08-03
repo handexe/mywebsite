@@ -1,11 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import PropTypes from 'prop-types';
 
-ContactModal.propTypes = {
-  showModal: PropTypes.string.isRequired,
-  handleClose: PropTypes.string.isRequired, // veya uygun tip
-};
 function ContactModal({ showModal, handleClose }) {
   return (
     <div>

@@ -18,7 +18,8 @@ function Login({ setIsAuth }) {
             <p>Lütfen Google İle Giriş Yapın.</p>
           </Row>
           <Row>
-            <Button
+            <Button variant="secondary"
+            id="login-btn"
               className="login-with-google-btn"
               onClick={signInWithGoogle}>
               Google İle Giriş Yap

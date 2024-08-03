@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import MyNavbar from "./components/navbar";
 import About from "./pages/About";
@@ -7,11 +8,13 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Post from "./pages/Post";
+import DeletePost from "./pages/DeletePost";
 import ProtectedRoute from "./components/ProtecedRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import './App.css';
+
 
 function App() {
   const [isAuth, setIsAuth] = useState(
@@ -65,7 +68,7 @@ function App() {
           <Route path="/blog/:postId" element={<Post/>} />
 
           <Route path="/about" element={<About isAuth={isAuth} />} />
-          <Route path="/contact" element={<Contact userEmail={userEmail} />} />
+          <Route path="/contact" element={<Contact userEmail={userEmail} isAuth={isAuth} />} />
           <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
           <Route
             path="/add-post"
@@ -75,6 +78,17 @@ function App() {
                 allowedEmail="hndegmb@gmail.com">
                 {" "}
                 <AddPost />{" "}
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/delete-post"
+            element={
+              <ProtectedRoute
+                userEmail={userEmail}
+                allowedEmail="hndegmb@gmail.com"
+              >
+                <DeletePost />
               </ProtectedRoute>
             }
           />
