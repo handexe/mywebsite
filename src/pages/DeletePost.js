@@ -3,6 +3,7 @@ import { Container, Form, Row  , Button} from "react-bootstrap";
 import {collection , query ,where , getDocs , deleteDoc} from 'firebase/firestore'
 import {db } from "../firebase"
 import "./Pages.css"
+import Footer from '../components/Footer'
 function DeletePost() {
   const [title, setTitle] = useState("");
 
