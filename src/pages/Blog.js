@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import "./Pages.css";
 import { Container, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Footer from '../components/Footer'
 function Blog({ isAuth }) {
   const [data, setData] = useState([]);
 
@@ -35,6 +36,7 @@ function Blog({ isAuth }) {
           </Card>
         ))}
       </Container>
+      <Footer/>
     </div>
   );
 }

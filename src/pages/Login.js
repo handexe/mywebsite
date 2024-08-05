@@ -3,6 +3,7 @@ import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { Button, Container, Row } from "react-bootstrap";
 import "./Pages.css";
+import Footer from "../components/Footer";
 function Login({ setIsAuth }) {
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider).then(() => {
@@ -27,6 +28,7 @@ function Login({ setIsAuth }) {
           </Row>
         </Container>
       </Container>
+      <Footer/>
     </div>
   );
 }

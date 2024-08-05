@@ -15,6 +15,7 @@ import { db, storage } from "../firebase";
 import { v4 as uuidv4 } from "uuid";
 
 import "./Pages.css";
+import Footer from "../components/Footer";
 
 function AddPost() {
   const [txt, setTxt] = useState("");
@@ -132,6 +133,7 @@ function AddPost() {
           </Button>
         </Form>
       </Container>
+      <Footer/>
     </div>
   );
 }

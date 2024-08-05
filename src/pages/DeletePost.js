@@ -43,6 +43,7 @@ function DeletePost() {
         <Button className="m-3" variant="danger" onClick={handlerPostDelete} >Sil</Button>
       </Form>
       </Row>
+      <Footer/>
     </Container>
   );
 }

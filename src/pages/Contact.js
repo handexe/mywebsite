@@ -4,6 +4,7 @@ import { Container, Form, Button } from "react-bootstrap";
 import "./Pages.css";
 import ContactModal from "./ContactModal";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Contact({ userEmail, isAuth }) {
   const [state, handleSubmit] = useForm("mvgpawqo");
@@ -61,6 +62,7 @@ function Contact({ userEmail, isAuth }) {
         </Form.Group>
       </Form>
       {showModal && <ContactModal showModal={showModal} handleClose={handleCloseModal} />}
+      <Footer/>
     </Container>
   );
 }

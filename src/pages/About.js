@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Card, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Pages.css";
+import Footer from "../components/Footer";
 function About({ isAuth }) {
   const birthYear = 2003;
   const currentYear = new Date().getFullYear(); // Güncel yılı alın
@@ -56,6 +57,7 @@ function About({ isAuth }) {
           </Card.Body>
         </Card>
       </Row>
+      <Footer/>
     </Container>
   );
 }

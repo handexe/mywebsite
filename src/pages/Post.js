@@ -7,6 +7,7 @@ import "./Pages.css";
 import MonacoEditorComponent from "../components/MonacoEditor/MonacaEditor";
 import CommentForm from "../components/Comment/CommentForm";
 import CommentList from "../components/Comment/CommentList";
+import Footer from "../components/Footer";
 function Post() {
   const { postId } = useParams();
   const [post, setPost] = useState(null);
@@ -90,6 +91,7 @@ function Post() {
           </Row>
         </Container>
       )}
+      <Footer/>
     </div>
   );
 }
