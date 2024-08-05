@@ -34,7 +34,7 @@ function MyNavbar({signUserOut, isAuth, userEmail}) {
           }}>
          <Container>
           <Navbar.Brand as={Link} to="/" className="mx-auto">
-            Hande G
+            Hande   
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

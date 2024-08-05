@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col, Image, Placeholder } from "react-bootstrap";
 import { db } from "../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import "./Pages.css";
@@ -36,21 +36,23 @@ function Post() {
                   <p className="h5 mb-4">{post.titleVal}</p>
                 </Row>
                 <Row className="m-2 mb-4 ">{post.TxtVal}</Row>
-                { post.ImgVal ? (<Row>
+                {post.ImgVal ? (
+                  <Row>
                     <Image
                       src={post.ImgVal}
                       alt="Örnek Resim"
                       style={{ maxWidth: "30%", height: "auto" }}
                       thumbnail
                     />
-                  </Row>) : ( <Row></Row>)
-                  
-                }
+                  </Row>
+                ) : (
+                  <Row></Row>
+                )}
               </Container>
             </Col>
 
             <Col md={3} id="code-blog">
-              <MonacoEditorComponent data={post.TxtVal} />
+              <MonacoEditorComponent data={post.CodeVal} />
             </Col>
           </Row>
           <Row className="p-2" id="comments-blok">
@@ -60,7 +62,33 @@ function Post() {
           </Row>
         </Container>
       ) : (
-        <p>Loading...</p>
+        <Container id="post-con">
+          <Row>
+            <Col md={9}>
+              <Container className="p-4" id="post">
+                <Placeholder as={Container} animation="glow">
+                  <Placeholder xs={4} size="lg" />
+                </Placeholder>
+                <br />
+                <Placeholder as="p" animation="glow">
+                  <Placeholder xs={8} size="lg" />
+                  <Placeholder xs={9} />
+                  <Placeholder xs={10} />
+                </Placeholder>
+              </Container>
+            </Col>
+          </Row>
+          
+          <Row className="p-2" id="comments-blok">
+            <Placeholder as="p" animation="glow">
+            <Placeholder xs={4} size="lg" />
+            <br/>
+            <br/>
+            <Placeholder xs={3} size="lg" />
+            <Placeholder xs={7} size="lg" />
+            </Placeholder>
+          </Row>
+        </Container>
       )}
     </div>
   );

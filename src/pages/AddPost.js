@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Container, Form, Row } from "react-bootstrap";
+import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import {
   collection,
   addDoc,
@@ -20,28 +20,29 @@ function AddPost() {
   const [txt, setTxt] = useState("");
   const [title, setTitle] = useState("");
   const [img, setImg] = useState(NaN);
+  const [code , setCode] = useState("");
 
   const handlerUpload = async (event) => {
     try {
       // Dosya nesnesini al
       const file = event.target.files[0];
-  
+
       if (!file) {
         console.error("No file selected");
         return;
       }
-  
+
       // Dosya referansını oluştur
       const imgRef = ref(storage, `images/${uuidv4()}`);
-  
+
       // Dosyayı yükle
       const uploadResult = await uploadBytes(imgRef, file);
       console.log("Upload result:", uploadResult);
-  
+
       // Yüklenen dosyanın URL'sini al
       const downloadURL = await getDownloadURL(uploadResult.ref);
       console.log("File URL:", downloadURL);
-  
+
       // URL'yi duruma kaydet
       setImg(downloadURL);
     } catch (error) {
@@ -54,15 +55,18 @@ function AddPost() {
   const handlerTextUpload = (e) => {
     setTxt(e.target.value);
   };
+  const handlerCodeUpload = (e) => {
+    setCode(e.target.value);
+  }
   const handlerSubmit = async () => {
     const counterDocRef = doc(db, "counters", "post");
     const counterDecSnap = await getDoc(counterDocRef);
-    let currentId = 0 ;
+    let currentId = 0;
     if (counterDecSnap.exists()) {
       currentId = counterDecSnap.data().currentId;
     } else {
       await setDoc(counterDocRef, { currentId: 0 });
-      currentId++ ;
+      currentId++;
     }
 
     const valRef = collection(db, "post");
@@ -70,6 +74,7 @@ function AddPost() {
       id: currentId,
       titleVal: title,
       TxtVal: txt,
+      CodeVal: code,
       ImgVal: img,
       timestamp: Timestamp.fromDate(new Date()),
     });
@@ -95,21 +100,31 @@ function AddPost() {
           </Row>
 
           <Row>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Konuyu Buraya Yazınız.</Form.Label>
-              <div className="custom-quill-container">
-                <Form.Control
-                  as="textarea"
-                  rows={3}
-                  onChange={handlerTextUpload}
-                />
-                <br />
-                <Form.Label>
+            {" "}
+            <Col>
+              <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Konuyu Buraya Yazınız.</Form.Label>
+                <div className="custom-quill-container">
+                  <Form.Control
+                    as="textarea"
+                    rows={3}
+                    onChange={handlerTextUpload}
+                  />
+                  <br />
+                </div>
+              </Form.Group>
+            </Col>
+            <Col>
+            <Form.Control
+                    as="textarea"
+                    rows={3}
+                    onChange={handlerCodeUpload}
+                  />
+            </Col>
+            <Form.Label>
                   Buradan Sıra ile Gireceğiniz Resimleri Seçiniz.
                 </Form.Label>
                 <Form.Control type="file" onChange={(e) => handlerUpload(e)} />
-              </div>
-            </Form.Group>
           </Row>
 
           <Button className="mb-2" variant="secondary" onClick={handlerSubmit}>

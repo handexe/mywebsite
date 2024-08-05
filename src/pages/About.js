@@ -48,7 +48,7 @@ function About({ isAuth }) {
             </Card.Text>
             <Card.Footer>
               Bana ulaşmak isterseniz{" "}
-              <Link className="link-body-emphasis link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
+              <Link to={"/Contact"} className="link-body-emphasis link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
                 bu sayfa aracılığıyla
               </Link>{" "}
               bana eposta ile iletişime geçebilirsiniz

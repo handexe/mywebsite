@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Post from "./pages/Post";
 import DeletePost from "./pages/DeletePost";
 import ProtectedRoute from "./components/ProtecedRoute";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
@@ -94,6 +95,7 @@ function App() {
           />
         </Routes>
       </Router>
+      
     </div>
   );
 }
