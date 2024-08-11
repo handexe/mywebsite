@@ -3,9 +3,30 @@ import { Card, Container, Row } from "react-bootstrap";
 import { db } from "../../firebase";
 import { collection, query, where, orderBy, getDocs } from "firebase/firestore";
 
+
 function CommentList({ postId }) {
   const [comment, setComment] = useState([]);
 
+  // useEffect(() => {
+  //   const fetchPostComments = async (postId) => {
+  //     try {
+  //       const response = await fetch(`/api/get-post-comments/${postId}`);
+    
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
+    
+  //       const comments = await response.json();
+  //       setComment(comments);
+  //       // comments ile işlemler yapabilirsiniz (örneğin, state'e kaydetmek)
+  //     } catch (error) {
+  //       console.error('Error:', error);
+  //       alert('An error occurred while fetching comments for the post.');
+  //     }
+  //   };
+  //   fetchPostComments();
+  // }, [postId]);
+  
   useEffect(() => {
     const fetchComments = async () => {
       try {

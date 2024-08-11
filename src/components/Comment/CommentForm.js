@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState ,useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { db, auth } from "../../firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
@@ -8,6 +8,31 @@ function CommentForm({ postId }) {
   const [comment, setComment] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [userName, setUserName] = useState("");
+  // const handlerSubmit = async (name, comment) => {
+  //   try {
+  //     const response = await fetch("/api/add-comments", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ name, comment }),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+
+  //     const result = await response.json();
+  //     console.log(result);
+  //     alert("Comment added successfully");
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //     alert("An error occurred while adding the comment.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+  
   useEffect(() => {
     // Kullanıcı durumu değişikliklerini dinle
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -52,11 +77,16 @@ function CommentForm({ postId }) {
     }
   };
 
+
   return (
     <Form onSubmit={handlerSubmit}>
       <Form.Group controlId="formName" className="m-2">
         <Form.Label>Adınız</Form.Label>
-        <Form.Control type="text" value={userName} readOnly />
+        <Form.Control
+          type="text"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </Form.Group>
       <Form.Group controlId="formComment" className="m-2">
         <Form.Label>Yorum Yapınız</Form.Label>

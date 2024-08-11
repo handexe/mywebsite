@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
+
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import {
   collection,
   addDoc,
@@ -9,7 +11,6 @@ import {
   setDoc,
   Timestamp,
 } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../firebase";
 
 import { v4 as uuidv4 } from "uuid";
@@ -59,6 +60,32 @@ function AddPost() {
   const handlerCodeUpload = (e) => {
     setCode(e.target.value);
   }
+  // const handlerSubmit = async () => {
+  //   const formData = new FormData();
+  //   formData.append("title", title);
+  //   formData.append("txt", txt);
+  //   formData.append("code", code);
+
+  
+  //   try {
+  //     const response = await fetch('https://hande-blog.vercel.app/api/posts/add-post', {
+  //       method: 'POST',
+  //       body: formData
+  //     });
+  
+  
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+  
+  //     const result = await response.json();
+  //     console.log(result);
+  //     alert(`Post eklendi: ${result.id}`);
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     alert('Bir hata oluştu.');
+  //   }
+  // };
   const handlerSubmit = async () => {
     const counterDocRef = doc(db, "counters", "post");
     const counterDecSnap = await getDoc(counterDocRef);

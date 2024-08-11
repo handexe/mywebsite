@@ -1,12 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
-import { Link } from "react-router-dom";
-
 const ThirdCard = () => {
   const [data, setData] = useState([]);
 
+  // const fetchTop2Posts = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:3001/api/posts/', {
+  //       method: 'GET',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+  
+  //     const topPosts = await response.json();
+  //     setData(topPosts);
+  //     // topPosts ile işlemler yapabilirsiniz (örneğin, state'e kaydetmek)
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     alert('An error occurred while fetching top 2 posts.');
+  //   }
+  // };
+  // useEffect(() => {
+  //   fetchTop2Posts();
+  // }, []);
+
+  
   const getData = async () => {
     const valReff = collection(db, "post");
     // Sıralama ve sorgu oluşturun
@@ -19,7 +43,6 @@ const ThirdCard = () => {
   useEffect(() => {
     getData();
   });
-
 
   return (
     <Container id="third-card">

@@ -11,7 +11,25 @@ import Footer from "../components/Footer";
 function Post() {
   const { postId } = useParams();
   const [post, setPost] = useState(null);
-
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     try {
+  //       const response = await fetch(`/api/get-post/${postId}`);
+  
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
+  
+  //       const postData = await response.json();
+  //       setPost(postData);
+  //     } catch (error) {
+  //       console.error('Error fetching post:', error);
+  //     }
+  //   };
+  
+  //   fetchPost();
+  // }, [postId]);
+  
   useEffect(() => {
     const fetchPost = async () => {
       const docSnap = await getDoc(doc(db, "post", postId));
@@ -25,6 +43,7 @@ function Post() {
 
     fetchPost();
   }, [postId]);
+
 
   return (
     <div style={{ margin: "0px" }}>

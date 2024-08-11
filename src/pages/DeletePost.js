@@ -13,6 +13,25 @@ import Footer from "../components/Footer";
 function DeletePost() {
   const [title, setTitle] = useState("");
 
+  // const handlerPostDelete = async () => {
+  //   try {
+  //     const response = await fetch(`/api/delete-post/${encodeURIComponent(title)}`, {
+  //       method: "DELETE",
+  //     });
+  
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+  
+  //     const result = await response.json();
+  //     console.log(result);
+  //     alert("Post deleted successfully");
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //     alert("An error occurred while deleting the post.");
+  //   }
+  // };
+  
   const handlerPostDelete = async () => {
     try {
       const postRef = collection(db, "post");
