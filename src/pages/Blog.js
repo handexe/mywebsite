@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card , Col , Row , Placeholder } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { getDocs, collection, query, orderBy } from "firebase/firestore";
@@ -48,7 +48,9 @@ function Blog({ isAuth }) {
             <Card id="posts-blog" key={post.id}>
               <Card.Body>
                 <Card.Title as="h5">{post.titleVal}</Card.Title>
-                <Card.Text>{post.TxtVal}</Card.Text>
+                <Card.Text>{post.TxtVal.length <= 100
+                    ? post.TxtVal
+                    : post.TxtVal.substring(0, 100) + "..."} </Card.Text>
                 <Link to={`/blog/${post.id}`}>Posta git</Link>
               </Card.Body>
             </Card>
@@ -56,7 +58,22 @@ function Blog({ isAuth }) {
         </Container>
       ) : (
         <Container id="blog-posts-container">
-          <p>No posts available.</p>
+        <Row>
+            <Col>
+              <Container className="p-4" id="posts-blog">
+                <Placeholder as={Container} animation="glow">
+                  <Placeholder xs={4} size="lg" />
+                </Placeholder>
+                <br />
+                <Placeholder as="p" animation="glow">
+                  <Placeholder xs={8} size="lg" />
+                  <Placeholder xs={9} />
+                </Placeholder>
+              </Container>
+            </Col>
+          </Row>
+          
+        
         </Container>
       )}
 
