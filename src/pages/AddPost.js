@@ -22,7 +22,7 @@ function AddPost() {
   const [txt, setTxt] = useState("");
   const [title, setTitle] = useState("");
   const [img, setImg] = useState(NaN);
-  const [code , setCode] = useState("");
+  const [code, setCode] = useState("");
 
   const handlerUpload = async (event) => {
     try {
@@ -59,25 +59,23 @@ function AddPost() {
   };
   const handlerCodeUpload = (e) => {
     setCode(e.target.value);
-  }
+  };
   // const handlerSubmit = async () => {
   //   const formData = new FormData();
   //   formData.append("title", title);
   //   formData.append("txt", txt);
   //   formData.append("code", code);
 
-  
   //   try {
   //     const response = await fetch('https://hande-blog.vercel.app/api/posts/add-post', {
   //       method: 'POST',
   //       body: formData
   //     });
-  
-  
+
   //     if (!response.ok) {
   //       throw new Error(`HTTP error! status: ${response.status}`);
   //     }
-  
+
   //     const result = await response.json();
   //     console.log(result);
   //     alert(`Post eklendi: ${result.id}`);
@@ -143,16 +141,21 @@ function AddPost() {
               </Form.Group>
             </Col>
             <Col>
-            <Form.Control
+              <Form.Group controlId="exampleForm.ControlTextarea2">
+                <Form.Label>Kodu buraya yapıştırınız.</Form.Label>
+                <div className="custom-quill-container">
+                  <Form.Control
                     as="textarea"
                     rows={3}
                     onChange={handlerCodeUpload}
                   />
+                </div>
+              </Form.Group>
             </Col>
             <Form.Label>
-                  Buradan Sıra ile Gireceğiniz Resimleri Seçiniz.
-                </Form.Label>
-                <Form.Control type="file" onChange={(e) => handlerUpload(e)} />
+              Buradan Sıra ile Gireceğiniz Resimleri Seçiniz.
+            </Form.Label>
+            <Form.Control type="file" onChange={(e) => handlerUpload(e)} />
           </Row>
 
           <Button className="mb-2" variant="secondary" onClick={handlerSubmit}>
@@ -160,7 +163,7 @@ function AddPost() {
           </Button>
         </Form>
       </Container>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
