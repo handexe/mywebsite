@@ -76,7 +76,7 @@ function App() {
             element={
               <ProtectedRoute
                 userEmail={userEmail}
-                allowedEmail={process.env.REACT_APP_ADMIN_EMAIL}>
+                >
                 {" "}
                 <AddPost />{" "}
               </ProtectedRoute>
@@ -87,7 +87,7 @@ function App() {
             element={
               <ProtectedRoute
                 userEmail={userEmail}
-                allowedEmail= {process.env.REACT_APP_ADMIN_EMAIL}
+                
               >
                 <DeletePost />
               </ProtectedRoute>
