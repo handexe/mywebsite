@@ -51,7 +51,7 @@ function MyNavbar({ signUserOut, isAuth, userEmail }) {
               </Nav.Link>
               {isAuth ? (
                 <>
-                  {userEmail === "hndegmb@gmail.com" && (
+                  {userEmail === process.env.REACT_APP_ADMIN_EMAIL && (
                     <>
                       
                       <Nav.Link as={Link} to="/add-post">
