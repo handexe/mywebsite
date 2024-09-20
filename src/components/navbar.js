@@ -24,7 +24,7 @@ function MyNavbar({ signUserOut, isAuth, userEmail }) {
           left: "50%",
           transform: "translateX(-50%)",
           minWidth: "50%",
-          paddingLeft: "5rem",
+          paddingLeft: "5%",
           borderRadius: "15px",
           backgroundColor: "#e5e5e5", // Açık kahverengi
           zIndex: 1000,

@@ -13,12 +13,13 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+console.log(process.env.REACT_APP_FIREBASE_API); // Eğer undefined ise çevresel değişkenler yüklenmemiştir.
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
-export const auth = getAuth();
+export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 export const storage = getStorage(app);
 export const analytics = getAnalytics(app);

@@ -27,11 +27,11 @@ function Footer() {
         </Col>
         <Col id="footer-column">
         <h3>Sosyal Medya</h3>
-          <a href="#insta" className="link-light link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
+          <a href="https://www.instagram.com/0.fonce/" className="link-light link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
             <p>Instagram</p>
           </a>
-          <a href="#twitter" className="link-light link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
-            <p>Twitter</p>
+          <a href="https://www.linkedin.com/in/hande-g%C3%B6mbe-69a5b823a/" className="link-light link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
+            <p>Linkedin</p>
           </a>
 
         </Col>
