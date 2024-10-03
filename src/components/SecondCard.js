@@ -11,7 +11,7 @@ function SecondCard() {
         <Card.Text>
           Bir Bilgisayar Programcısı olarak yaptığım tüm projelerime buradan ulaşabilirsiniz. 
         </Card.Text>
-        <Link to="https://github.com/handexg">
+        <Link to="https://github.com/handexe">
           <Button variant="secondary">Git Hub</Button>
         </Link>
         

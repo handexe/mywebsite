@@ -15,7 +15,7 @@ function Footer() {
           </a>
 
           <a 
-            href="https://github.com/handexg"
+            href="https://github.com/handexe"
             className="link-light link-offset-3 link-underline-opacity-50 link-underline-opacity-100-hover">
             <p>Git Hub</p>
           </a>
